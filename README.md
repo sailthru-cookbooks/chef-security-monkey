@@ -1,10 +1,11 @@
 # security-monkey-cookbook
 
-TODO: Enter the cookbook description here.
+Installs the (Netflix Security Monkey)[http://securitymonkey.readthedocs.org/en/latest/index.html] 
+to monitor AWS security settings.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Ubuntu and RedHat families while running on EC2.
 
 ## Attributes
 
@@ -16,10 +17,28 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['security-monkey']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
+    <td><tt>['security-monkey']['secret_key']</tt></td>
+    <td>String</td>
+    <td>Random string to use for Flask secret key</td>
     <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['security-monkey']['password_salt']</tt></td>
+    <td>String</td>
+    <td>Random string to use for Flask salt</td>
+    <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['security-monkey']['mail_sender']</tt></td>
+    <td>String</td>
+    <td>Email address from which to send reports</td>
+    <td><tt>securitymonkey@example.tld</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['security-monkey']['security_team_email']</tt></td>
+    <td>String</td>
+    <td>Email address to send reports</td>
+    <td><tt>securitymonkey@example.tld</tt></td>
   </tr>
 </table>
 
@@ -36,6 +55,18 @@ Include `security-monkey` in your node's `run_list`:
   ]
 }
 ```
+### security-monkey::nginx
+
+Include `security-monkey` in your node's `run_list`:
+
+```json
+{
+  "run_list": [
+    "recipe[security-monkey::nginx]"
+  ]
+}
+```
+
 
 ## Contributing
 

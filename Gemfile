@@ -14,3 +14,8 @@ gem 'berkshelf'
 #   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
 # end
 
+gem 'test-kitchen', '~> 1.0'
+
+group :integration do
+  gem 'kitchen-vagrant', '~> 0.15'
+end

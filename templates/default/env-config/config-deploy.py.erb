@@ -4,7 +4,7 @@
 LOG_LEVEL = "DEBUG"
 LOG_FILE = "security_monkey-deploy.log"
 
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:securitymonkeypassword@localhost:5432/secmonkey'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:<%= node['postgresql']['password']['postgres'] %>@localhost:5432/secmonkey'
 
 SQLALCHEMY_POOL_SIZE = 50
 SQLALCHEMY_MAX_OVERFLOW = 15
@@ -19,7 +19,7 @@ WEB_PATH = '/static/ui.html'
 
 SECRET_KEY = '<%= node['security_monkey']['secret_key'] %>'
 
-DEFAULT_MAIL_SENDER = <%= node['security_monkey']['mail_sender'] %>
+DEFAULT_MAIL_SENDER = "<%= node['security_monkey']['mail_sender'] %>"
 SECURITY_REGISTERABLE = True
 SECURITY_CONFIRMABLE = False
 SECURITY_RECOVERABLE = False
@@ -28,4 +28,4 @@ SECURITY_PASSWORD_SALT = '<%= node['security_monkey']['password_salt'] %>'
 SECURITY_POST_LOGIN_VIEW = 'https://<%= node['fqdn'] %>'
 
 # This address gets all change notifications
-SECURITY_TEAM_EMAIL = <%= node['security_monkey']['security_team_email'] %>
+SECURITY_TEAM_EMAIL = [ "<%= node['security_monkey']['security_team_email'] %>" ]
