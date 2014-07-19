@@ -77,6 +77,17 @@ Include `security-monkey` in your node's `run_list`:
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request
 
+### To Dos
+
+- [ ] Write tests
+- [ ] Verify on EC2 (vagrant DNS resolution breaks ATM
+- [ ] Better idempotency
+- [ ] Optional use of RDS vs. postgres
+- [ ] Integrate with SES
+- [ ] Finish nginx integration
+  - [ ] Self-signed certificate generation
+- [ ] Secret and salt random generation
+
 ## License and Authors
 
 Author:: David F. Severski (<davidski@deadheaven.com>)
