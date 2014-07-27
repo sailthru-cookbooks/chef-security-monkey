@@ -1,7 +1,7 @@
 server {
    listen      0.0.0.0:443 ssl;
-   ssl_certificate /etc/ssl/certs/server.crt;
-   ssl_certificate_key /etc/ssl/private/server.key;
+   ssl_certificate <%= node['security_monkey']['nginx']['ssl_cert'] %>;
+   ssl_certificate_key <%= node['security_monkey']['nginx']['ssl_key'] %>;
    access_log  /var/log/nginx/log/securitymonkey.access.log;
    error_log   /var/log/nginx/log/securitymonkey.error.log;
 
@@ -51,12 +51,12 @@ server {
 
     location /static {
         rewrite ^/static/(.*)$ /$1 break;
-        root <%= node['security_monkey']['basedir'] >/security_monkey/static;
+        root <%= node['security_monkey']['basedir'] %>/security_monkey/static;
         index ui.html;
     }
 
     location / {
-        root <%= node['security_monkey']['basedir'] >/security_monkey/static;
+        root <%= node['security_monkey']['basedir'] %>/security_monkey/static;
         index ui.html;
     }
 

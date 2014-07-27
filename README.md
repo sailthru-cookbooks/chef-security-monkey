@@ -5,42 +5,16 @@ to monitor AWS security settings.
 
 ## Supported Platforms
 
-Ubuntu and RedHat families while running on EC2.
+Ubuntu while running on EC2.
 
 ## Attributes
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['security-monkey']['secret_key']</tt></td>
-    <td>String</td>
-    <td>Random string to use for Flask secret key</td>
-    <td><tt>true</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['security-monkey']['password_salt']</tt></td>
-    <td>String</td>
-    <td>Random string to use for Flask salt</td>
-    <td><tt>true</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['security-monkey']['mail_sender']</tt></td>
-    <td>String</td>
-    <td>Email address from which to send reports</td>
-    <td><tt>securitymonkey@example.tld</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['security-monkey']['security_team_email']</tt></td>
-    <td>String</td>
-    <td>Email address to send reports</td>
-    <td><tt>securitymonkey@example.tld</tt></td>
-  </tr>
-</table>
+| Key | Type | Description | Default |
+|-----|------|-------------|---------|
+| `['security-monkey']['secret_key']` | String | Random string to use for Flask secret key | `true` |
+| `['security-monkey']['password_salt']` | String | Random string to use for Flask salt | `true` | 
+| `['security-monkey']['mail_sender']` | String | Email address from which to send reports | `securitymonkey@example.tld` |
+| `['security-monkey']['security_team_email']` | String | Email address to send reports | `securitymonkey@example.tld` |
 
 ## Usage
 
@@ -80,12 +54,12 @@ Include `security-monkey` in your node's `run_list`:
 ### To Dos
 
 - [ ] Write tests
-- [ ] Verify on EC2 (vagrant DNS resolution breaks ATM
+- [ ] Verify on EC2 (vagrant DNS resolution breaks ATM)
 - [ ] Better idempotency
 - [ ] Optional use of RDS vs. postgres
 - [ ] Integrate with SES
 - [ ] Finish nginx integration
-  - [ ] Self-signed certificate generation
+  - [X] Self-signed certificate generation
 - [ ] Secret and salt random generation
 
 ## License and Authors

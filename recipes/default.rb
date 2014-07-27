@@ -27,6 +27,9 @@
 include_recipe "python::default"
 python_pip "setuptools"
 
+#FQDN is now set in the attributes file...use ot
+target_fqdn = node['security_monkey']['target_fqdn']
+
 user "#{node['security_monkey']['user']}" do
   home "#{node['security_monkey']['homedir']}"
   system true
@@ -58,8 +61,12 @@ git "#{node['security_monkey']['basedir']}" do
 end
 
 bash "install_security_monkey" do
-  #environment "SECURITY_MONKEY_SETTINGS" => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py"
+  environment ({ 'HOME' => "#{node['security_monkey']['homedir']}", 
+    'USER' => "#{node['security_monkey']['user']}", 
+    "SECURITY_MONKEY_SETTINGS" => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py" })
+  #user "#{node['security_monkey']['user']}"
   user "root"
+  umask "022"
   cwd "#{node['security_monkey']['basedir']}"
   code <<-EOF
   python setup.py install
@@ -67,10 +74,20 @@ bash "install_security_monkey" do
   action :nothing
 end
 
+#the deploy log is setup via the setup.py script and won't be writeable by
+#our permissions limted user...let's fix that
+file "#{node['security_monkey']['basedir']}/security_monkey-deploy.log" do
+  owner "#{node['security_monkey']['user']}"
+  group "#{node['security_monkey']['group']}"
+  action :create
+end
+
+
 #deploy config template
 template "#{node['security_monkey']['basedir']}/env-config/config-deploy.py" do
   mode "0644"
   source "env-config/config-deploy.py.erb"
+  variables ({ :target_fqdn => target_fqdn })
   notifies :run, "bash[create_database]", :immediately
 end
 
@@ -87,6 +104,7 @@ bash "create_database" do
   action :nothing
 end
 
+#ensure supervisor is available
 package "supervisor"
 
 template "#{node['security_monkey']['basedir']}/supervisor/security_monkey.ini" do

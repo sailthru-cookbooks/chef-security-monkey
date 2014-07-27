@@ -8,3 +8,4 @@ version          '0.1.0'
 
 depends 'python'
 depends 'nginx'
+depends 'ssl_certificate'
