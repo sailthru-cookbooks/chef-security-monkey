@@ -19,8 +19,8 @@ default['security_monkey']['create_account'] = true
 default['security_monkey']['join_groups'] = []
 default['security_monkey']['homedir'] = '/home/secmonkey'
 
-if attribute?("cloud")
-  default['security_monkey']['target_fqdn'] = node['cloud']['public_hostname']
+if attribute?("cloud_v2")
+  default['security_monkey']['target_fqdn'] = node['cloud_v2']['public_hostname']
 else
   default['security_monkey']['target_fqdn'] = node['fqdn']
 end
