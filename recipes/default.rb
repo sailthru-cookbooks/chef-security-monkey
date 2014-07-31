@@ -82,12 +82,25 @@ file "#{node['security_monkey']['basedir']}/security_monkey-deploy.log" do
   action :create
 end
 
+if node['security_monkey']['password_salt'].nil?
+  password_salt = SecureRandom.uuid
+else
+  password_salt = node['security_monkey']['password_salt']
+end
+
+if node['security_monkey']['secret_key'].nil?
+  secret_key = SecureRandom.uuid
+else
+  secret_key = node['security_monkey']['secret_key']
+end
 
 #deploy config template
 template "#{node['security_monkey']['basedir']}/env-config/config-deploy.py" do
   mode "0644"
   source "env-config/config-deploy.py.erb"
-  variables ({ :target_fqdn => target_fqdn })
+  variables ({ :target_fqdn => target_fqdn,
+               :password_salt => password_salt,
+               :secret_key => secret_key })
   notifies :run, "bash[create_database]", :immediately
 end
 
