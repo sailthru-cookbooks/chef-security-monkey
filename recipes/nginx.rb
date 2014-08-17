@@ -4,15 +4,15 @@ package "nginx"
 
 # Create user and group for Nginx
 #
-user node[:nginx][:user] do
+user node['nginx']['user'] do
   comment "Nginx User"
   system true
   shell "/bin/false"
   action :create
 end
 
-group node[:nginx][:user] do
-  members node[:nginx][:user]
+group node['nginx']['user'] do
+  members node['nginx']['user']
   action :create
 end
 

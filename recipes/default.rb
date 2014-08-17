@@ -30,44 +30,44 @@ python_pip "setuptools"
 #FQDN is now set in the attributes file...use ot
 target_fqdn = node['security_monkey']['target_fqdn']
 
-user "#{node['security_monkey']['user']}" do
-  home "#{node['security_monkey']['homedir']}"
+user node['security_monkey']['user'] do
+  home node['security_monkey']['homedir']
   system true
   action :create
   manage_home true
 end
 
-group "#{node['security_monkey']['group']}" do
-  #gid #{node['security_monkey']['user']}
-  members #{node['security_monkey']['user']}
+group node['security_monkey']['group'] do
+  #gid node['security_monkey']['user']
+  members node['security_monkey']['user']
   append true
   system true
 end
 
 directory node['security_monkey']['basedir'] do
-  owner "#{node['security_monkey']['user']}"
-  group "#{node['security_monkey']['group']}"
+  owner node['security_monkey']['user']
+  group node['security_monkey']['group']
   mode 00755
   action :create
 end
 
-git "#{node['security_monkey']['basedir']}" do
+git node['security_monkey']['basedir'] do
   repository 'https://github.com/Netflix/security_monkey.git'
   revision 'master'
-  user "#{node['security_monkey']['user']}"
-  group "#{node['security_monkey']['group']}"
+  user node['security_monkey']['user']
+  group node['security_monkey']['group']
   action :sync
   notifies :run, "bash[install_security_monkey]", :immediately
 end
 
 bash "install_security_monkey" do
-  environment ({ 'HOME' => "#{node['security_monkey']['homedir']}", 
-    'USER' => "#{node['security_monkey']['user']}", 
+  environment ({ 'HOME' => node['security_monkey']['homedir'], 
+    'USER' => node['security_monkey']['user'], 
     "SECURITY_MONKEY_SETTINGS" => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py" })
   #user "#{node['security_monkey']['user']}"
   user "root"
   umask "022"
-  cwd "#{node['security_monkey']['basedir']}"
+  cwd node['security_monkey']['basedir']
   code <<-EOF
   python setup.py install
   EOF
@@ -77,8 +77,8 @@ end
 #the deploy log is setup via the setup.py script and won't be writeable by
 #our permissions limted user...let's fix that
 file "#{node['security_monkey']['basedir']}/security_monkey-deploy.log" do
-  owner "#{node['security_monkey']['user']}"
-  group "#{node['security_monkey']['group']}"
+  owner node['security_monkey']['user']
+  group node['security_monkey']['group']
   action :create
 end
 
@@ -107,7 +107,7 @@ end
 #upgrade datatables
 bash "create_database" do
   user "root"
-  cwd "#{node['security_monkey']['basedir']}"
+  cwd node['security_monkey']['basedir']
   code <<-EOF
   sudo -u postgres createdb secmonkey
   python manage.py db upgrade

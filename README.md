@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/davidski/chef-security-monkey.png)](http://travis-ci.org/davidski/chef-security-monkey)
+
 # security-monkey-cookbook
 
 Installs the (Netflix Security Monkey)[http://securitymonkey.readthedocs.org/en/latest/index.html] 

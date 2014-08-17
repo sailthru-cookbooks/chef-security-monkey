@@ -1,0 +1,181 @@
+E, [2014-08-09T20:17:00.074571 #9484] ERROR -- Kitchen: ------Exception-------
+E, [2014-08-09T20:17:00.074571 #9484] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: Message: Kitchen YAML file E:/local-cookbooks/security-monkey/.kitchen.yml does not exist.
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:74:in `read'
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:78:in `data'
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:66:in `suites'
+E, [2014-08-09T20:17:00.075571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:90:in `filter_instances'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:72:in `build_instances'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:52:in `instances'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:64:in `get_filtered_instances'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:85:in `parse_subcommand'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command/list.rb:31:in `call'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:47:in `perform'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:81:in `list'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2014-08-09T20:17:00.076571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:233:in `invoke_task'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `block in <top (required)>'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/errors.rb:81:in `with_friendly_errors'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `<top (required)>'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/bin/kitchen:23:in `load'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: C:/Ruby200/bin/kitchen:23:in `<main>'
+E, [2014-08-09T20:17:00.077571 #9484] ERROR -- Kitchen: ----------------------
+I, [2014-08-09T20:20:01.243934 #8112]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:20:07.976320 #8112]  INFO -- Kitchen: -----> Creating <default-ubuntu-1404>...
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: ------Exception-------
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: Message: Failed to complete #create action: [Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=vmware_workstation ----
+STDOUT: Bringing machine 'default' up with 'vmware_workstation' provider...
+STDERR: When using Vagrant with VMware Workstation on Windows, Vagrant must
+run with administrative privileges. I realize this is not ideal,
+but this is the only way to make network modifications with VMware.
+Please run Vagrant in a console with Windows administrative privileges.
+---- End output of vagrant up --no-provision --provider=vmware_workstation ----
+Ran vagrant up --no-provision --provider=vmware_workstation returned 1]
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=vmware_workstation ----
+STDOUT: Bringing machine 'default' up with 'vmware_workstation' provider...
+STDERR: When using Vagrant with VMware Workstation on Windows, Vagrant must
+run with administrative privileges. I realize this is not ideal,
+but this is the only way to make network modifications with VMware.
+Please run Vagrant in a console with Windows administrative privileges.
+---- End output of vagrant up --no-provision --provider=vmware_workstation ----
+Ran vagrant up --no-provision --provider=vmware_workstation returned 1
+E, [2014-08-09T20:20:11.590528 #8112] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/driver/base.rb:158:in `run_command'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:123:in `run'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:68:in `create'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `call'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `block in synchronize_or_call'
+E, [2014-08-09T20:20:11.591528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize_or_call'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:252:in `create_action'
+E, [2014-08-09T20:20:11.592528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:119:in `converge'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-08-09T20:20:11.593528 #8112] ERROR -- Kitchen: ----------------------
+I, [2014-08-09T20:21:26.843832 #9724]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:21:33.345204 #9724]  INFO -- Kitchen: -----> Creating <default-ubuntu-1404>...
+I, [2014-08-09T20:22:45.983395 #9724]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T20:29:08.959348 #9724] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T20:33:29.056224 #496]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:33:35.638601 #496]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T20:34:06.628373 #496] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T20:34:38.009168 #9192]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:34:44.771555 #9192]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T20:36:56.355630 #9192] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T20:43:15.164296 #11100]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:43:21.768674 #11100]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T20:43:26.754959 #11100] ERROR -- Kitchen: ------Exception-------
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::NoSolutionError]
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: Class: Berkshelf::NoSolutionError
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: Message: Berkshelf::NoSolutionError
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/resolver.rb:83:in `rescue in resolve'
+E, [2014-08-09T20:43:26.755959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/resolver.rb:73:in `resolve'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/installer.rb:174:in `install_from_universe'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/installer.rb:39:in `run'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/berkshelf-3.1.4/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-08-09T20:43:26.756959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_solo.rb:33:in `create_sandbox'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-08-09T20:43:26.757959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-08-09T20:43:26.758959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:119:in `converge'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-08-09T20:43:26.759959 #11100] ERROR -- Kitchen: ----------------------
+I, [2014-08-09T20:44:13.366625 #8032]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T20:44:20.021006 #8032]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T20:47:31.695719 #8032] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T21:00:45.289110 #10440]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T21:00:51.860486 #10440]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T21:01:23.412291 #10440] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T21:02:17.728397 #8140]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T21:02:24.331775 #8140]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T21:03:08.417297 #8140] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T21:10:13.194593 #3948]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-08-09T21:10:13.211594 #3948] ERROR -- Kitchen: ------Exception-------
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: Message: Error parsing E:/local-cookbooks/security-monkey/.kitchen.yml as YAML.
+Please run `kitchen diagnose --no-instances --loader' to help debug your issue.
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: Class: Psych::SyntaxError
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: Message: (<unknown>): did not find expected key while parsing a block mapping at line 25 column 9
+E, [2014-08-09T21:10:13.212594 #3948] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:211:in `rescue in parse_yaml_string'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:200:in `parse_yaml_string'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:113:in `yaml'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:105:in `combined_hash'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:77:in `read'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:78:in `data'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:66:in `suites'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:90:in `filter_instances'
+E, [2014-08-09T21:10:13.213594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:72:in `build_instances'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:52:in `instances'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:64:in `get_filtered_instances'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:85:in `parse_subcommand'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:37:in `block in call'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:36:in `call'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:47:in `perform'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:118:in `block (2 levels) in <class:CLI>'
+E, [2014-08-09T21:10:13.214594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2014-08-09T21:10:13.216594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2014-08-09T21:10:13.216594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:233:in `invoke_task'
+E, [2014-08-09T21:10:13.217594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2014-08-09T21:10:13.217594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `block in <top (required)>'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/lib/kitchen/errors.rb:81:in `with_friendly_errors'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: C:/Ruby200/lib/ruby/gems/2.0.0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `<top (required)>'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: C:/Ruby200/bin/kitchen:23:in `load'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: C:/Ruby200/bin/kitchen:23:in `<main>'
+E, [2014-08-09T21:10:13.218594 #3948] ERROR -- Kitchen: ----------------------
+I, [2014-08-09T21:10:27.937436 #9100]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T21:10:34.480810 #9100]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T21:11:18.298316 #9100] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T21:12:23.921070 #7500]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T21:12:30.501446 #7500]  INFO -- Kitchen: -----> Converging <default-ubuntu-1404>...
+E, [2014-08-09T21:15:13.231687 #7500] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1404>.
+I, [2014-08-09T21:17:28.536426 #2504]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-08-09T21:17:35.399819 #2504]  INFO -- Kitchen: -----> Destroying <default-ubuntu-1404>...
+I, [2014-08-09T21:17:53.540857 #2504]  INFO -- Kitchen: -----> Kitchen is finished. (0m25.00s)
