@@ -2,7 +2,7 @@
 
 # security-monkey-cookbook
 
-Installs the (Netflix Security Monkey)[http://securitymonkey.readthedocs.org/en/latest/index.html] 
+Installs the [Netflix Security Monkey](http://securitymonkey.readthedocs.org/en/latest/index.html) 
 to monitor AWS security settings.
 
 ## Supported Platforms
@@ -56,7 +56,7 @@ Include `security-monkey` in your node's `run_list`:
 ### To Dos
 
 - [ ] Write tests
-- [ ] Verify on EC2 (vagrant DNS resolution breaks ATM)
+- [X] Verify on EC2 (vagrant DNS resolution breaks ATM)
 - [ ] Better idempotency
 - [ ] Optional use of RDS vs. postgres
 - [ ] Integrate with SES
