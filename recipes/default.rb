@@ -53,7 +53,7 @@ end
 
 git node['security_monkey']['basedir'] do
   repository 'https://github.com/Netflix/security_monkey.git'
-  revision 'master'
+  revision ['security_monkey']['branch']
   user node['security_monkey']['user']
   group node['security_monkey']['group']
   action :sync
