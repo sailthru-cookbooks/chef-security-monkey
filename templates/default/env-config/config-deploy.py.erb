@@ -16,16 +16,24 @@ WEB_PORT = '443'
 FRONTED_BY_NGINX = True
 NGINX_PORT = '443'
 WEB_PATH = '/static/ui.html'
+BASE_URL = 'https://<%= @target_fqdn %>'
 
 SECRET_KEY = '<%= @secret_key %>'
 
-DEFAULT_MAIL_SENDER = "<%= node['security_monkey']['mail_sender'] %>"
+MAIL_DEFAULT_SENDER = "<%= node['security_monkey']['mail_sender'] %>"
 SECURITY_REGISTERABLE = True
 SECURITY_CONFIRMABLE = False
 SECURITY_RECOVERABLE = False
 SECURITY_PASSWORD_HASH = 'bcrypt'
 SECURITY_PASSWORD_SALT = '<%= @password_salt %>'
-SECURITY_POST_LOGIN_VIEW = 'https://<%= @target_fqdn %>'
+
+SECURITY_POST_LOGIN_VIEW = BASE_URL
+SECURITY_POST_REGISTER_VIEW = BASE_URL
+SECURITY_POST_CONFIRM_VIEW = BASE_URL
+SECURITY_POST_RESET_VIEW = BASE_URL
+SECURITY_POST_CHANGE_VIEW = BASE_URL
 
 # This address gets all change notifications
 SECURITY_TEAM_EMAIL = [ "<%= node['security_monkey']['security_team_email'] %>" ]
+
+EMAILS_USE_SMTP = False
