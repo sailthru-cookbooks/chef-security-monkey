@@ -113,7 +113,7 @@ bash "create_database" do
   python manage.py db upgrade
   EOF
   environment "SECURITY_MONKEY_SETTINGS" => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py"
-  not_if "psql -lqt | cut -d \| -f 1 | grep -w secmonkey", :user => 'posstgres'
+  not_if "psql -lqt | cut -d \| -f 1 | grep -w secmonkey", :user => 'postgres'
   action :nothing
 end
 
