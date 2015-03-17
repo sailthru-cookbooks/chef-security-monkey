@@ -8,7 +8,7 @@
 #
 #
 
-apt_repository 'dart' do
+apt_repository 'dart-repo' do
   uri          'https://storage.googleapis.com/download.dartlang.org/linux/debian'
   arch         'amd64'
   distribution 'trusty'
@@ -16,4 +16,4 @@ apt_repository 'dart' do
   key          ' https://dl-ssl.google.com/linux/linux_signing_key.pub'
 end
 
-package dart
+package 'dart'
