@@ -1,4 +1,4 @@
-default['security_monkey']['basedir'] = '/opt/secmonkey'
+default['security_monkey']['basedir'] = '/usr/local/src/secmonkey'
 default['security_monkey']['branch'] = 'master'
 
 # specify your own secret and salt

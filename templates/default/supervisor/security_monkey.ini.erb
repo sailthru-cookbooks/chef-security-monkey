@@ -8,11 +8,11 @@ serverurl=unix:///tmp/supervisor.sock;
 supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
 
 [supervisord]
-logfile=/tmp/securitymonkey.log
+logfile=/var/log/security_monkey/securitymonkey.log
 logfile_maxbytes=50MB
 logfile_backups=2
 loglevel=trace
-pidfile=/tmp/supervisord.pid
+pidfile=/var/run/supervisord.pid
 nodaemon=false
 minfds=1024
 minprocs=200

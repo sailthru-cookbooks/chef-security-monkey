@@ -26,6 +26,11 @@
 
 include_recipe "python::default"
 python_pip "setuptools"
+%w(swig).each do |pkg|
+  package pkg do
+    action :install
+  end
+end
 
 #FQDN is now set in the attributes file...use ot
 target_fqdn = node['security_monkey']['target_fqdn']
@@ -74,6 +79,17 @@ bash "install_security_monkey" do
   action :nothing
 end
 
+include_recipe "security-monkey::dart"
+
+bash "build the web ui" do
+  cwd "#{node['security_monkey']['basedir']}/dart"
+  code <<-EOF
+  /usr/lib/dart/bin/pub build
+  mkdir -p #{node['security_monkey']['basedir']}/security_monkey/static/
+  cp -R #{node['security_monkey']['basedir']}/dart/build/web/* #{node['security_monkey']['basedir']}/security_monkey/static/
+  EOF
+end
+
 #the deploy log is setup via the setup.py script and won't be writeable by
 #our permissions limted user...let's fix that
 file "#{node['security_monkey']['basedir']}/security_monkey-deploy.log" do
@@ -120,19 +136,26 @@ end
 #ensure supervisor is available
 package "supervisor"
 
-template "#{node['security_monkey']['basedir']}/supervisor/security_monkey.ini" do
+template "/etc/supervisor/conf.d/security_monkey.conf" do
   mode "0644"
   source "supervisor/security_monkey.ini.erb"
-  notifies :run, "bash[install_supervisor]"
+#  notifies :run, "bash[install_supervisor]"
+  notifies :run, "bash[restart_supervisor]"
 end
 
-bash "install_supervisor" do
-  user "root"
-  cwd "#{node['security_monkey']['basedir']}/supervisor"
+bash "restart_supervisor" do
   code <<-EOF
-  sudo -E supervisord -c security_monkey.ini
-  sudo -E supervisorctl -c security_monkey.ini
+  service supervisor restart
   EOF
-  environment 'SECURITY_MONKEY_SETTINGS' => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py"
-  action :nothing
 end
+
+#bash "install_supervisor" do
+#  user "root"
+#  cwd "#{node['security_monkey']['basedir']}/supervisor"
+#  code <<-EOF
+#  sudo -E supervisord -c security_monkey.ini
+#  sudo -E supervisorctl -c security_monkey.ini
+#  EOF
+#  environment 'SECURITY_MONKEY_SETTINGS' => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py"
+#  action :nothing
+#end
