@@ -1,3 +1,13 @@
+#
+# Cookbook Name:: security-monkey
+# Recipe:: dart
+#
+# Copyright 2015, Sailthru, Inc.
+#
+# All rights reserved - Do Not Redistribute
+#
+#
+
 apt_repository 'dart' do
   uri          'https://storage.googleapis.com/download.dartlang.org/linux/debian'
   arch         'amd64'
