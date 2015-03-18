@@ -138,8 +138,8 @@ package "supervisor"
 
 directory node['security_monkey']['supervisor_logdir'] do
   mode "0755"
-  owner "root"
-  group "root"
+  owner node['security_monkey']['user'] 
+  group node['security_monkey']['group']
   action :create
 end
 
