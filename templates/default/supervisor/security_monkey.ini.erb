@@ -21,6 +21,9 @@ user=<%= node['security_monkey']['user'] %>
 [program:securitymonkey]
 command=python <%= node['security_monkey']['basedir'] %>/manage.py run_api_server
 environment=PYTHON_EGG_CACHE="<%= node['security_monkey']['basedir'] %>/.python-eggs",SECURITY_MONKEY_SETTINGS="<%= node['security_monkey']['basedir'] %>/env-config/config-deploy.py"
+user=<%= node['security_monkey']['user'] %>
+stdout_logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkey-stdout.log
+stderr_logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkey-stderr.log
 
 [program:securitymonkeyscheduler]
 command=python <%= node['security_monkey']['basedir'] %>/manage.py start_scheduler
@@ -29,3 +32,5 @@ environment=PYTHON_EGG_CACHE="<%= node['security_monkey']['basedir'] %>/.python-
 user=<%= node['security_monkey']['user'] %>
 autostart=true
 autorestart=true
+stdout_logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkeyscheduler-stdout.log
+stderr_logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkeyscheduler-stderr.log

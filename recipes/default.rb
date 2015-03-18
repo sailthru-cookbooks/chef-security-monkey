@@ -52,7 +52,7 @@ end
 directory node['security_monkey']['basedir'] do
   owner node['security_monkey']['user']
   group node['security_monkey']['group']
-  mode 00755
+  mode 0755
   action :create
 end
 
