@@ -147,7 +147,7 @@ template "/etc/supervisor/conf.d/security_monkey.conf" do
   mode "0644"
   source "supervisor/security_monkey.ini.erb"
 #  notifies :run, "bash[install_supervisor]"
-  notifies :run, "bash[restart_supervisor]"
+#  notifies :run, "bash[restart_supervisor]"
 end
 
 #bash "restart_supervisor" do

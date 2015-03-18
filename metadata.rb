@@ -4,7 +4,7 @@ maintainer_email 'davidski@deadheaven.com'
 license          'MIT'
 description      'Installs/Configures security-monkey'
 long_description 'Installs/Configures security-monkey'
-version          '0.1.11'
+version          '0.1.12'
 
 depends 'python'
 depends 'nginx'
