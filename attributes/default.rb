@@ -28,3 +28,5 @@ if !node['cloud_v2'].nil?
 else
   default['security_monkey']['target_fqdn'] = node['fqdn']
 end
+
+default['security_monkey']['ses_region'] = 'us-east-1'

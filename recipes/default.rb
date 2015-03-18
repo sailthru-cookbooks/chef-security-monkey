@@ -150,11 +150,12 @@ template "/etc/supervisor/conf.d/security_monkey.conf" do
   notifies :run, "bash[restart_supervisor]"
 end
 
-bash "restart_supervisor" do
-  code <<-EOF
-  service supervisor restart
-  EOF
-end
+#bash "restart_supervisor" do
+#  code <<-EOF
+#  supervisorctl -c /etc/supervisor/conf.d/security_monkey.conf < restart securitymonkey
+#  supervisorctl -c /etc/supervisor/conf.d/security_monkey.conf < restart securitymonkeyscheduler
+#  EOF
+#end
 
 #bash "install_supervisor" do
 #  user "root"
