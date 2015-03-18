@@ -8,7 +8,7 @@ serverurl=unix:///tmp/supervisor.sock;
 supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
 
 [supervisord]
-logfile=/var/log/security_monkey/securitymonkey.log
+logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkey.log
 logfile_maxbytes=50MB
 logfile_backups=2
 loglevel=trace

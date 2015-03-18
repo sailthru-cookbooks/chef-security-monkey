@@ -136,6 +136,13 @@ end
 #ensure supervisor is available
 package "supervisor"
 
+directory node['security_monkey']['supervisor_logdir'] do
+  mode "0755"
+  owner "root"
+  group "root"
+  action :create
+end
+
 template "/etc/supervisor/conf.d/security_monkey.conf" do
   mode "0644"
   source "supervisor/security_monkey.ini.erb"
