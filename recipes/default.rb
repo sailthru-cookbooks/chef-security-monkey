@@ -146,24 +146,14 @@ end
 template "/etc/supervisor/conf.d/security_monkey.conf" do
   mode "0644"
   source "supervisor/security_monkey.ini.erb"
-#  notifies :run, "bash[install_supervisor]"
-#  notifies :run, "bash[restart_supervisor]"
+  notifies :run, "bash[reload_supervisor]"
 end
 
-#bash "restart_supervisor" do
-#  code <<-EOF
-#  supervisorctl -c /etc/supervisor/conf.d/security_monkey.conf < restart securitymonkey
-#  supervisorctl -c /etc/supervisor/conf.d/security_monkey.conf < restart securitymonkeyscheduler
-#  EOF
-#end
+bash "reload_supervisor" do
+  code <<-EOF
+  supervisorctl reread
+  supervisorctl update
+  EOF
+  action :nothing
+end
 
-#bash "install_supervisor" do
-#  user "root"
-#  cwd "#{node['security_monkey']['basedir']}/supervisor"
-#  code <<-EOF
-#  sudo -E supervisord -c security_monkey.ini
-#  sudo -E supervisorctl -c security_monkey.ini
-#  EOF
-#  environment 'SECURITY_MONKEY_SETTINGS' => "#{node['security_monkey']['basedir']}/env-config/config-deploy.py"
-#  action :nothing
-#end
