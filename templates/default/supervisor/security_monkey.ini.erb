@@ -12,7 +12,7 @@ logfile=<%= node['security_monkey']['supervisor_logdir'] %>/securitymonkey.log
 logfile_maxbytes=50MB
 logfile_backups=2
 loglevel=trace
-pidfile=/var/run/supervisord.pid
+pidfile=<%= node['security_monkey']['basedir'] %>/supervisord.pid
 nodaemon=false
 minfds=1024
 minprocs=200
