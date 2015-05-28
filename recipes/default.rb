@@ -82,6 +82,7 @@ bash "install_security_monkey" do
   python setup.py install
   EOF
   action :nothing
+  notifies :run, "bash[build the web ui]", :delayed
 end
 
 include_recipe "security-monkey::dart"
@@ -93,6 +94,7 @@ bash "build the web ui" do
   mkdir -p #{node['security_monkey']['basedir']}/security_monkey/static/
   cp -R #{node['security_monkey']['basedir']}/dart/build/web/* #{node['security_monkey']['basedir']}/security_monkey/static/
   EOF
+  action :nothing
 end
 
 #the deploy log is setup via the setup.py script and won't be writeable by
