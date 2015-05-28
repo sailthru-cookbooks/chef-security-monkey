@@ -1,5 +1,5 @@
 default['security_monkey']['basedir'] = '/usr/local/src/secmonkey'
-default['security_monkey']['branch'] = 'master'
+default['security_monkey']['branch'] = 'v0.3.4'
 default['security_monkey']['dart_version'] = '1.8.5-1'
 
 # specify your own secret and salt
