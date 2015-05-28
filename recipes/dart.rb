@@ -16,4 +16,6 @@ apt_repository 'dart-repo' do
   key          ' https://dl-ssl.google.com/linux/linux_signing_key.pub'
 end
 
-package "dart==#{node['security_monkey']['dart_version']}"
+package "dart" do
+  version node['security_monkey']['dart_version']
+end
