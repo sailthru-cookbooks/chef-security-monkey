@@ -26,6 +26,11 @@
 
 include_recipe "python::default"
 python_pip "setuptools"
+
+package "python-setuptools" do
+  action :install
+end
+
 %w(swig).each do |pkg|
   package pkg do
     action :install
