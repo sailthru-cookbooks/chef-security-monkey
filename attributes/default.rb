@@ -24,6 +24,7 @@ default['security_monkey']['create_account'] = true
 default['security_monkey']['join_groups'] = []
 default['security_monkey']['homedir'] = '/home/secmonkey'
 
+default['security_monkey']['logdir'] = '/var/log/secmonkey'
 default['security_monkey']['supervisor_logdir'] = '/var/log/security_monkey'
 
 if !node['cloud_v2'].nil?
